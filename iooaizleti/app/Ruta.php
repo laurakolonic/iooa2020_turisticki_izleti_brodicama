@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ruta extends Model
 {
-    protected $fillable=['id', 'nazivRuta', 'opisRuta'];
+    protected $fillable=['id', 'nazivRuta', 'opisRuta', 'image'];
 }

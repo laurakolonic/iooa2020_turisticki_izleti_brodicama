@@ -17,6 +17,7 @@ class CreateRutasTable extends Migration
             $table->id();
             $table->string('nazivRuta');
             $table->string('opisRuta');
+            $table->string('image');
             $table->timestamps();
         });
     }

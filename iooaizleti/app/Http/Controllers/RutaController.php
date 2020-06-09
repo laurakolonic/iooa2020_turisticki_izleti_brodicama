@@ -11,7 +11,7 @@ class RutaController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -37,9 +37,11 @@ class RutaController extends Controller
      */
     public function store(StoreRuta $request)
     {
+        $path = $request-> file('image')->store ('image');
         Ruta::create([
             'nazivRuta'=>$request->nazivRuta, 
             'opisRuta'=>$request->opisRuta,
+            'image'=>$path,
             
         ]);
 
@@ -79,6 +81,7 @@ class RutaController extends Controller
         $rutum->update([ 
             'nazivRuta'=>$request->nazivRuta, 
             'opisRuta'=>$request->opisRuta,
+            'image'=> $request->file('image')->store('image'),
         ]);
         return redirect(route('ruta.index'));
     }

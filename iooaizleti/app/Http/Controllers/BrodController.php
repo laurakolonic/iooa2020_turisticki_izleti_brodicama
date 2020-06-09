@@ -39,10 +39,11 @@ class BrodController extends Controller
      */
     public function store(StoreBrod $request)
     {
+        $path = $request-> file('image')->store ('image');
         Brod::create([
             'nazivBrod'=>$request->nazivBrod, 
             'opisBrod'=>$request->opisBrod,
-            
+            'image'=>$path,
         ]);
 
         return redirect(route('brod.index'));
@@ -82,6 +83,7 @@ class BrodController extends Controller
         $brod->update([ 
             'nazivBrod'=>$request->nazivBrod, 
             'opisBrod'=>$request->opisBrod,
+            'image'=> $request->file('image')->store('image'),
         ]);
         return redirect(route('brod.index'));
     }

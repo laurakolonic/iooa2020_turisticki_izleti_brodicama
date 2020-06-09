@@ -17,6 +17,7 @@ class CreateBrodsTable extends Migration
             $table->id();
             $table->string('nazivBrod');
             $table->string('opisBrod');
+            $table->string('image');
             $table->timestamps();
         });
 

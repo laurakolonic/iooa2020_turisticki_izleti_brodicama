@@ -103,7 +103,7 @@
                         <a href="#">Gosti</a>
                     </li>
                     <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
-                        <a href="#">Putovanja</a>
+                        <a href="{{route('putovanje.index')}}">Putovanja</a>
                     </li>
                   
                 </ul>

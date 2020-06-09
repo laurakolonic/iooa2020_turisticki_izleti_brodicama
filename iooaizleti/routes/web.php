@@ -30,6 +30,7 @@ Route::group(['middleware' => ['web','admin']], function()
     Route::resource('/cms/ruta', 'RutaController');
     Route::resource('/cms/zaposlenik', 'ZaposlenikController');
     Route::resource('/cms/kategorija', 'kategorijaGostController');
+    Route::resource('/cms/putovanje', 'PutovanjeController');
 });
 
 //AUTH RUTE
