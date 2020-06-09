@@ -72,7 +72,6 @@ class RegisterController extends Controller
             'imeUser' => $data['imeUser'],
             'prezimeUser' => $data['prezimeUser'],
             'datumRodenja' => $data['datumRodenja'],
-        
         ]);
         $user->save();
         return $user;

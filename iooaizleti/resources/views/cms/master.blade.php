@@ -96,7 +96,7 @@
                   
                    
                     <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
-                        <a href="#">Gosti</a>
+                        <a href="{{route('gostPutovanje.index')}}">Gosti</a>
                     </li>
                     <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
                         <a href="{{route('putovanje.index')}}">Putovanja</a>

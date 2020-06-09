@@ -29,6 +29,8 @@ Route::group(['middleware' => ['web','admin']], function()
     Route::resource('/cms/zaposlenik', 'ZaposlenikController');
     Route::resource('/cms/kategorija', 'kategorijaGostController');
     Route::resource('/cms/putovanje', 'PutovanjeController');
+    Route::get('/cms/gostPutovanje', 'pregledGostiController@index')->name('gostPutovanje.index');
+    Route::get('/cms/gostPutovanje/pregled/', 'pregledGostiController@pregled')->name('gostPutovanje.pregled');
 });
 
 //AUTH RUTE
