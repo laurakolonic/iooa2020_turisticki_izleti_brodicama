@@ -16,8 +16,8 @@ class CreateKategorijaGostsTable extends Migration
         Schema::create('kategorija_gosts', function (Blueprint $table) {
             $table->id();
             $table->string('nazivKategorija');
-            $table->date('godinaRodenja');
-            $table->date('tekucaGodina');
+            $table->date('godinaRodenja')->nullable();
+            $table->date('tekucaGodina')->nullable();
             $table->integer('cijena');
             
             $table->timestamps();

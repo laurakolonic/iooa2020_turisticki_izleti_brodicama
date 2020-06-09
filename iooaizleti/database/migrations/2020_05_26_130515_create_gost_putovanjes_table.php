@@ -17,10 +17,11 @@ class CreateGostPutovanjesTable extends Migration
             $table->id();
             $table->foreignId('idGost');
             $table->foreignId('idPutovanje');
+            $table->integer('cijenaGosta');
             $table->timestamps();
 
-            $table->foreign('idGost')->references('id')->on('gosts')->onDelete('cascade');
-            $table->foreign('idPutovanje')->references('id')->on('putovanjes')->onDelete('cascade');
+            $table->foreign('idGost')->references('id')->on('users');
+            $table->foreign('idPutovanje')->references('id')->on('putovanjes');
         });
     }
 

@@ -39,12 +39,8 @@
             </div>
 
             <div class="form-group">
-                <label for="zaposlenik">Zaposlenik</label>
-                <select name="zaposlenik" id="zaposlenik" class="form-control">
-                    @foreach($zaposlenici as $zaposlenik)
-                    <option value="{{ $zaposlenik->id }}"> {{ $zaposlenik->imeZaposlenik }} {{ $zaposlenik->PrezimeZaposlenik }}</option>
-                    @endforeach
-                </select>
+                <label for="cijena">Cijena</label>
+                <input type="number" id="cijena" class="form-control" name="cijena" value="{{ isset($putovanje) ? $putovanje->cijena : ''}}">
             </div>
 
             @include('layouts.errors')

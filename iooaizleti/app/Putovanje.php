@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Putovanje extends Model
 {
-    protected $fillable=['id', 'datum', 'vrijeme','idBrod','idRuta', 'idZaposlenik'];
+    protected $fillable=['id', 'datum', 'vrijeme','idBrod','idRuta', 'cijena'];
 
     public function brod(){
         return $this->belongsTo(Brod::class, 'idBrod');
@@ -19,7 +19,4 @@ class Putovanje extends Model
         return $this->belongsTo(Ruta::class, 'idRuta');
     }
 
-    public function zaposlenik(){
-        return $this->belongsTo(Zaposlenik::class, 'idZaposlenik');
-    }
 }

@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class gostPutovanje extends Model
 {
-    //
+    protected $table='gost_putovanjes';
+    protected $guarded=[];
+
+    public function gost(){
+        return $this->belongsTo(User::class, 'idGost');
+    }
+
+    public function putovanje(){
+        return $this->belongsTo(Putovanje::class, 'idPutovanje');
+    }
 }

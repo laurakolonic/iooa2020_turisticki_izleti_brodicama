@@ -19,13 +19,13 @@ class CreatePutovanjesTable extends Migration
             $table->time('vrijeme');
             $table->foreignId('idBrod');
             $table->foreignId('idRuta');
-            $table->foreignId('idZaposlenik');
+            $table->integer('cijena');
 
 
             $table->timestamps();
             $table->foreign('idBrod')->references('id')->on('brods')->onDelete('cascade');
             $table->foreign('idRuta')->references('id')->on('rutas')->onDelete('cascade');
-            $table->foreign('idZaposlenik')->references('id')->on('zaposleniks')->onDelete('cascade');
+            
         });
     }
 

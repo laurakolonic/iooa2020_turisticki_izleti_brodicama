@@ -16,7 +16,7 @@
                     <th>Brod slika</th>
                     <th>Ruta</th>
                     <th>Ruta slika</th>
-                    <th>Zaposlenik</th>
+                    <th>Cijena</th>
                     <th></th>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
                                 <img src="/app/public/{{ ($putovanje->ruta->image) }}" width=100px height=60px alt="">
                             </th>
                             <th>
-                                {{ $putovanje->zaposlenik->imeZaposlenik }} {{ $putovanje->zaposlenik->PrezimeZaposlenik }}
+                                {{ $putovanje->cijena }}
                             </th>
                             <td>
                                 <a href="{{ route('putovanje.edit', $putovanje->id) }}" class="btn btn-secondary btn-sm">Izmijeni</a>

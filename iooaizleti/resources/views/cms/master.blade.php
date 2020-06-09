@@ -93,12 +93,8 @@
                     <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
                         <a href="{{route('ruta.index')}}">Rute</a>
                     </li>
-                    <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
-                        <a href="{{route('zaposlenik.index')}}">Zaposlenici</a>
-                    </li>
-                    <li class="list-group-item" style="width: 100%; text-align:center; ">
-                        <a href="{{route('kategorija.index')}}">Kategorije gostiju</a>
-                    </li>
+                  
+                   
                     <li class="list-group-item" style="width: 100%; text-align:center; padding-top:20px;">
                         <a href="#">Gosti</a>
                     </li>

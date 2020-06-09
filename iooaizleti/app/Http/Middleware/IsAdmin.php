@@ -17,8 +17,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(!auth()->user()->admin == 1){
-            return redirect('/index');
+        //PODESITI
+        if(Auth::check() && Auth::user()->admin == 0){
+            return redirect('/');
         }
         return $next($request);
      }

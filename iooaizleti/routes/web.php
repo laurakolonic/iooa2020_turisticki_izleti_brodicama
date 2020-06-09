@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GostPutovanjeController@index')->name('welcome');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/index', 'GostPutovanjeController@pregled')->name('pregledputovanja.pregled'); 
 
 
 //ADMIN RUTE
@@ -36,5 +34,7 @@ Route::group(['middleware' => ['web','admin']], function()
 //AUTH RUTE
 Route::group(['middleware' => ['web','auth']], function()
 {
-    Route::get('/index', function () {return view('index');});   
+    Route::get('/index/{putovanje}', 'GostPutovanjeController@rezerviraj')->name('pregledputovanja.rezerviraj');
 });
+
+

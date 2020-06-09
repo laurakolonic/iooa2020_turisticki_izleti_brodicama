@@ -48,7 +48,7 @@ class PutovanjeController extends Controller
             'vrijeme'=>$request->vrijeme,
             'idBrod'=>$request->brod,
             'idRuta'=>$request->ruta,
-            'idZaposlenik'=>$request->zaposlenik, //jer smo u view nazvali polje zaposlenik
+            'cijena'=>$request->cijena, 
         
         ]);
 
@@ -94,7 +94,7 @@ class PutovanjeController extends Controller
             'vrijeme'=>$request->vrijeme,
             'idBrod'=>$request->brod,
             'idRuta'=>$request->ruta,
-            'idZaposlenik'=>$request->zaposlenik,
+            'cijena'=>$request->cijena,
         ]);
 
         return redirect(route('putovanje.index'));
