@@ -29,7 +29,7 @@
 
 
                 
-                <a class="navbar-brand" style="margin-left:40px; margin-top:10px;" href="{{ url('/cmsadmin/index') }}">
+                <a class="navbar-brand" style="margin-left:40px; margin-top:10px;" href="{{ url('/cms/index') }}">
                     Dobrodošli, ADMINISTRATOR!
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -57,9 +57,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                     <a class="dropdown-item" href="#">
-                                        Moj profil
-                                    </a>
+                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

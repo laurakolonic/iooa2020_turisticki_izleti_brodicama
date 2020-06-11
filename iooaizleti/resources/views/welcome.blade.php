@@ -71,6 +71,7 @@ display: inline-block;
                 <a style="color:white; background-color:silver;" href="{{ url('/cms/index') }}">Admin verzija</a>
                 <a style="font-weight:lighter;color:white; background-color:silver; font-size:1vw;" href="{{ url('/logout') }}">Odjavi se</a>
                 @else
+                <a style="font-weight:lighter;color:white; background-color:silver;font-size:1vw;" href="{{route('pregledsvojihrezervacija.pregled')}}">Pregled Rezervacija</a>
                 <a style="font-weight:lighter;color:white; background-color:silver;font-size:1vw;" href="{{ url('/logout') }}">Odjavi se</a>
                 @endif
             @else

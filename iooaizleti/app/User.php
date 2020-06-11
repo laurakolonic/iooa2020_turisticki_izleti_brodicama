@@ -41,5 +41,7 @@ class User extends Authenticatable
         return $this->admin == 1;
     }
 
-    
+    public function gost_putovanjes(){
+        return $this->hasMany(gostPutovanje::class, 'idGost');
+    }
 }

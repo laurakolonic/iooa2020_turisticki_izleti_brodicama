@@ -59,12 +59,21 @@ a:link, a:visited {
 </head>
 
 <body>
-
+  <a style="margin-top:10px; margin-left:10px; background-color:silver; border-color:silver;" class="btn btn-secondary" href="{{ url('/cms/index') }}">
+    Povratak na prthodnu stranicu.
+  </a>
+  @isset($rezervacija)
   <div class="alert alert-success" role="alert" style="width: 500px; margin-left:500px; margin-top:80px;">
     <h4 class="alert-heading">Uspješna rezervacija!</h4>
     <a>Uspješno ste rezervirali putovanje. Podatci o putovanju su u nastavku:</a>
   </div>
+  @endisset
 
+  @isset($status)
+    {{$status}}
+  @endisset
+
+  @isset($rezervacija)
 <table class="table"style="margin-top:60px; width:1400px; margin-left:70px;">
     <thead class="thead-dark">
       
@@ -75,16 +84,26 @@ a:link, a:visited {
         <th scope="col">Naziv broda</th>
         <th scope="col">Naziv rute</th>
         <th scope="col">Cijena (za jednu osobu) u EUR</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr style="background-color:white; opacity:0.7;">
-        <th scope="row">{{ $rezervacija->gost->imeUser }}</th> <th scope="row">{{ $rezervacija->gost->prezimeUser }}</th>
-         <th scope="row">{{ $rezervacija->putovanje->brod->nazivBrod }}</th>  <th scope="row">{{ $rezervacija->putovanje->ruta->nazivRuta }}</th> <th scope="row">{{ $rezervacija->cijenaGosta }}</th>     
-      </tr>
      
-    </tbody>
-  </table>
-</body>
-@endsection
+      <tr style="background-color:white; opacity: 0.8">
+        <th scope="row">{{ $rezervacija->gost->imeUser }}</th> <th scope="row">{{ $rezervacija->gost->prezimeUser }}</th>
+        <th scope="row">{{ $rezervacija->putovanje->brod->nazivBrod }}</th>  <th scope="row">{{ $rezervacija->putovanje->ruta->nazivRuta }}</th> 
+        <th scope="row">{{ $rezervacija->cijenaGosta }}</th>     
+       
+     </tr>
+              
 
+    </tbody>      
+
+  </table>
+  @endisset
+</body>
+
+
+
+
+@endsection

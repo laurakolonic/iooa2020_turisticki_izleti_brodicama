@@ -37,6 +37,8 @@ Route::group(['middleware' => ['web','admin']], function()
 Route::group(['middleware' => ['web','auth']], function()
 {
     Route::get('/index/{putovanje}', 'GostPutovanjeController@rezerviraj')->name('pregledputovanja.rezerviraj');
+    Route::get('/pregledrezervacija', 'GostPutovanjeController@pregledsvojihrezervacija')->name('pregledsvojihrezervacija.pregled');
+    Route::get('/pregledrezervacija/{id}', 'GostPutovanjeController@izbrisirezervaciju')->name('izbrisirezervaciju');  
 });
 
 

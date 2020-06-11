@@ -32,6 +32,12 @@ class GostPutovanjeController extends Controller
             $cijena=Putovanje::find($putovanje)->cijena;
         }
 
+        if(gostPutovanje::where('idGost', '=', Auth::user()->id)->count() >0 
+            && gostPutovanje::where('idPutovanje', '=', Putovanje::find($putovanje)->id)->count() >0){
+                $status = "Rezervacija već postoji";
+                return view('rezervacija', compact('status'));
+            }
+
         $rezervacija = gostPutovanje::create([
             'idGost' => Auth::user()->id,
             'idPutovanje' => Putovanje::find($putovanje)->id,
@@ -39,5 +45,25 @@ class GostPutovanjeController extends Controller
         ]);
 
         return view('rezervacija', compact('rezervacija'));
+    }
+
+    public function destroy(Putovanje $rezervacija)
+    {
+        $rezervacija->delete(); 
+        return redirect(route('rezervacija.index'));
+    }
+
+    public function pregledsvojihrezervacija()
+    {
+        $gostputovanja = gostPutovanje::with('gost', 'putovanje')
+        ->leftJoin('users', 'users.id', '=', 'gost_putovanjes.idGost')
+        ->where('idGost', '=', Auth::user()->id)->get();
+        return view('pregledsvojihputovanja',compact('gostputovanja'));
+    }
+    public function izbrisirezervaciju($id)
+    {
+        $putovanje = gostPutovanje::where('idPutovanje','=',$id)
+        ->where('idGost','=', Auth::user()->id)->delete();
+        return redirect(route('pregledsvojihrezervacija.pregled'));
     }
 }

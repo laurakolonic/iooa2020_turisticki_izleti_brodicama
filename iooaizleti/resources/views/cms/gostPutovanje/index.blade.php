@@ -1,19 +1,20 @@
 @extends('cms.master')
 @section('content')
-<form action="{{ route('gostPutovanje.pregled') }}" style="margin-left:600px;">
-
-  <div class="card card-default" style="opacity: 0.8; width:300px; ">
-   <div class="card-header" style="width:300px;">DATUM</div>
+<div id="pregledGosti" style="    width: 100%; ">
+<form action="{{ route('gostPutovanje.pregled') }}" style="margin-left:85px; ">
+<div class="card-header" style="width:300px;">DATUM</div>
   <div class="form-group">
   
    <input type="date" min="2020-06-01" max="2021-10-20" id="datum" class="form-control" name="datum" value="Unesi datum" style="width: 300px;">
-   <button class="btn btn-success" style="margin-left:100px; width: 100px; background-color:silver; border-color: silver; margin-top:5px;"> Traži </button></div>
+   <button class="btn btn-success" style=" width: 100px; background-color:gray; border-color: silver; margin-top:5px; margin-left:100px;"> Traži </button></div>
 </div> </div> 
+  <div class="card card-default" style="opacity: 0.8; width:600px; margin-left:60px;">
+   
 
 <div class="d-flex justify-content-end mb-2">
 </div>
   <div class="card card-defatult">
-    <div class="card-header">GOST</div>
+    <div class="card-header" style=" background-color:silver; ">GOST</div>
     @if($gosti->count()>0)
     <div class="card-body">
         <table class="table">

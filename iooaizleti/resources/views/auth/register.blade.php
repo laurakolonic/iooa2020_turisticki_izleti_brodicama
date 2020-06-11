@@ -43,7 +43,7 @@
                             <label for="oibUser" class="col-md-4 col-form-label text-md-right">{{ __('OIB:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="oibUser" type="number" class="form-control @error('oibUser') is-invalid @enderror" name="oibUser" value="{{ old('oibUser') }}" required autocomplete="oibUser" autofocus>
+                                <input id="oibUser" type="text" minlength="11" maxlength="11" class="form-control " name="oibUser" value="{{ old('oibUser') }}" required autocomplete="oibUser" autofocus >
 
                                 @error('oibUser')
                                     <span class="invalid-feedback" role="alert">
@@ -90,10 +90,11 @@
                         </div>
 
                         <div class="form-group row">
+                            
                             <label for="datumRodenja" class="col-md-4 col-form-label text-md-right">{{ __('Datum rođenja:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="datumRodenja" type="date" class="form-control @error('datumRodenja') is-invalid @enderror" name="datumRodenja" value="{{ old('datumRodenja') }}" required autocomplete="datumRodenja" autofocus>
+                                <input id="datumRodenja" type="date" max="2020-06-01" class="form-control @error('datumRodenja') is-invalid @enderror" name="datumRodenja" value="{{ old('datumRodenja') }}" required autocomplete="datumRodenja" autofocus>
 
                                 @error('datumRodenja')
                                     <span class="invalid-feedback" role="alert">
@@ -115,5 +116,8 @@
             </div>
         </div>
     </div>
+
+
 </div>
+
 @endsection
